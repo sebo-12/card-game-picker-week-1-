@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F5F5F5">
+  <meta name="description" content="Tell us who is playing and we will pick 3 card games for you.">
+  <title>Card Game Picker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <h1>Card Game Picker</h1>
+      <p>Tell us who is playing and we will pick 3 card games for you.</p>
+    </header>
+
+    <form id="picker" class="form" novalidate>
+      <div class="field">
+        <label for="players">Number of players</label>
+        <select id="players" name="players" required>
+          <option value="" selected disabled>Choose</option>
+          <option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option><option>9</option>
+          <option>10</option><option>11</option><option>12</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ages">Ages</label>
+        <select id="ages" name="ages" required>
+          <option value="" selected disabled>Choose</option>
+          <option>Under 8</option>
+          <option>8 to 12</option>
+          <option>Teens</option>
+          <option>Adults</option>
+          <option>Mixed ages</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="time">Time available</label>
+        <select id="time" name="time" required>
+          <option value="" selected disabled>Choose</option>
+          <option>5 minutes</option>
+          <option>10 minutes</option>
+          <option>20 minutes</option>
+          <option>30 minutes</option>
+          <option>60 minutes or more</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="mood">Mood</label>
+        <select id="mood" name="mood" required>
+          <option value="" selected disabled>Choose</option>
+          <option>Chill</option>
+          <option>Competitive</option>
+          <option>Loud and chaotic</option>
+          <option>Quick laughs</option>
+        </select>
+      </div>
+
+      <button id="pick" class="button" type="submit" disabled>Pick our games</button>
+      <p id="hint" class="hint">Fill in all four to continue.</p>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Shuffling the deck</span>
+    </div>
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <h2 id="results-title" class="visually-hidden">Your 3 games</h2>
+      <p id="note" class="note" hidden></p>
+      <ol id="games" class="games"></ol>
+      <button id="again" class="button button-secondary" type="button">Pick again</button>
+    </section>
+  </main>
+
+  <template id="game-template">
+    <li class="game">
+      <h3 class="game-name"></h3>
+      <p class="game-why"></p>
+      <p class="game-adjust" hidden><strong>To make it work:</strong> <span></span></p>
+      <h4 class="game-label">How to play</h4>
+      <ol class="game-steps"></ol>
+      <a class="game-link" href="https://www.pagat.com/" target="_blank" rel="noopener">Full rules on Pagat.com</a>
+    </li>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

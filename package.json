@@ -1,0 +1,9 @@
+{
+  "name": "card-game-picker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "test": "node test-cases.js"
+  }
+}

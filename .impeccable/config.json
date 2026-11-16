@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-16T01:48:03.265Z",
+        "reason": "project brief: 'Use a clean sans-serif font like Inter' (pinned by the brief)"
+      }
+    ]
+  }
+}
